@@ -22,7 +22,15 @@ const creatTaskController = async (request,response) => {
 
 }
 
+const getById = async (request, response) => {
+    const param = request.params;
+    
+    const findTask = await taskModels.getById(param.id);
+
+    return response.status(200).json(findTask);
+}
 module.exports = {
     getAll,
-    creatTaskController
+    creatTaskController,
+    getById
 };

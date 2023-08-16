@@ -41,13 +41,19 @@ const creatTask = (task) => {
         status: taskStatus,
         data: currentDate.toLocaleDateString(),
     });
+
     console.log('New task created:', newTask);
    
 
     return newTask;
 }
+const getById = (id) => {
 
+    return tasks.findByPk(id);
+
+}
 module.exports = {
     getAll,
-    creatTask
+    creatTask,
+    getById
 };
